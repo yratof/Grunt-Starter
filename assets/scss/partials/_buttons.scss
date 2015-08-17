@@ -1,0 +1,25 @@
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of btns.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-btns/
+
+******************************************************************/
+
+/******************************
+Button Classes that you can have
+for free. Go on. Have them
+******************************/
+
+.btn.brand {			@include btn($brand-colour, true);		}
+.btn.highlight { 	@include btn($brand-highlight, true); 	}
+.btn.white {			@include btn($white, true); 				}
+.btn.black {			@include btn($black, true);				}
+.btn.accent {		  @include btn($brand-accent, true);	}

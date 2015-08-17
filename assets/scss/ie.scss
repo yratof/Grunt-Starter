@@ -1,0 +1,50 @@
+/* Ownership of the stylesheets is global. */
+
+$site-name: Meat !global;
+$author:	Andrew + Eivin !global;
+
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+
+@import 'bourbon';
+
+/******************************************************************
+IMPORTS & DEPENDENCIES
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+******************************************************************/
+
+// THIS CONVERTS ALL REMS TO PX
+$px-only: true;
+$ie: true;
+
+@import "partials/normalize";
+@import "partials/functions"; // Functions u() etc
+@import "partials/breakpoints"; // Breakpoints
+@import "partials/mixins"; // Mixins
+@import 'partials/global'; // Photoshop variables
+@import 'partials/columns'; // Columns
+
+@import 'partials/gridmath'; /* Grid Math */
+
+@import "partials/ie_grid"; // import grid
+
+/* All Elements */ 
+@import "components";
+
+@import "partials/animations";	// Animations
+@import "partials/alerts"; // Alerts
+@import "partials/buttons"; // buttons
+@import "partials/forms"; // forms (inputs & labels)
