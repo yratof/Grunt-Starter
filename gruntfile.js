@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: {
-          'assets/js/scripts.js': ['assets/js/scripts.js']
+          'assets/js/cache.js': ['assets/js/cache.js']
         }
       }
     },
@@ -21,9 +21,9 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'assets/img',
+          cwd: 'assets/images',
           src: ['**/*.{png,jpg,gif,svg}'],
-          dest: 'assets/img'
+          dest: 'assets/images'
         }]
       }
     },
@@ -47,9 +47,7 @@ module.exports = function(grunt) {
     combine_mq: {
       target: {
         files: {
-          'assets/css/ie.css': ['assets/css/ie.css'],
-          'assets/css/style.css': ['assets/css/style.css'],
-          'assets/css/login.css': ['assets/css/login.css']
+          'assets/css/style.css': ['assets/css/style.css']
         },
         options: {
           beautify: false
@@ -86,7 +84,7 @@ module.exports = function(grunt) {
             remove: false
         },
         dist: {
-            src: 'css/*.css'
+            src: 'assets/css/*.css'
         }
     },
     
